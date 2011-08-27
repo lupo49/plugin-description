@@ -1,0 +1,7 @@
+base   description
+author Ikuo Obataya, Matthias Schulte
+email  mailinglist@lupo49.de
+date   2011-08-27
+name   description plugin
+desc   Add a specified string to a description meta header
+url    http://www.dokuwiki.org/plugin:description
