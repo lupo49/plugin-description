@@ -24,7 +24,7 @@ class action_plugin_description extends DokuWiki_Action_Plugin {
     }
 
     /**
-     * Add a metadata['description']['abstract'] to meta header
+     * Add an abstract, global value or a specified string to meta header
      */
     function description(&$event, $param) {
         if(empty($event->data) || empty($event->data['meta'])) return;
@@ -49,6 +49,7 @@ class action_plugin_description extends DokuWiki_Action_Plugin {
         if($source == KEYWORD_SOURCE_SYNTAX) {
             $metadata = p_get_metadata($ID);
             $a = $metadata['plugin_description']['description'];
+            if(empty($a)) return;
         }
         
         $m = array("name" => "description", "content" => $a);
