@@ -38,7 +38,7 @@ class syntax_plugin_description extends DokuWiki_Syntax_Plugin {
         $description = $data[0];
         if(empty($description)) return false;
 
-        if ($mode == 'xhtml') {
+        if ($mode == 'metadata') {
             $metadata = p_get_metadata($ID);
             $metadata['plugin_description']['description'] = $description;
             $c = p_set_metadata($ID, $metadata);
