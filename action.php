@@ -2,10 +2,11 @@
 /**
  *  Description action plugin
  *
- *  @lastmodified 2008-07-21
+ *  @lastmodified 2012-07-02
  *  @license      GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *  @author       Ikuo Obataya <I.Obataya@gmail.com>
- *  @version      2010-11-09
+ *  @author       Matthias Schulte <dokuwiki@lupo49.de>
+ *  @version      2012-07-02
  */
 
 if(!defined('DOKU_INC')) die();
@@ -48,7 +49,7 @@ class action_plugin_description extends DokuWiki_Action_Plugin {
 
         if($source == KEYWORD_SOURCE_SYNTAX) {
             $metadata = p_get_metadata($ID);
-            $a = $metadata['plugin_description']['description'];
+            $a = $metadata['plugin_description']['keywords'];
             if(empty($a)) return;
         }
         

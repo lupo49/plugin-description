@@ -3,7 +3,7 @@
  * Description plugin
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Matthias Schulte <mailinglist@lupo49.de>
+ * @author     Matthias Schulte <dokuwiki@lupo49.de>
  */
 
 // must be run within Dokuwiki
@@ -39,10 +39,7 @@ class syntax_plugin_description extends DokuWiki_Syntax_Plugin {
         if(empty($description)) return false;
 
         if ($mode == 'metadata') {
-            $metadata = p_get_metadata($ID);
-            $metadata['plugin_description']['description'] = $description;
-            $c = p_set_metadata($ID, $metadata);
-            
+            $renderer->meta['plugin_description']['keywords'] = $description;
             return true;
         }
         return false;
