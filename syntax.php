@@ -25,14 +25,14 @@ class syntax_plugin_description extends DokuWiki_Syntax_Plugin {
         $this->Lexer->addSpecialPattern('\{\{description>.+?\}\}', $mode, 'plugin_description');
     }
 
-    function handle($match, $state, $pos, &$handler) {
+    function handle($match, $state, $pos, Doku_Handler $handler) {
         $match = substr($match, 14, -2); // strip markup
         $match = hsc($match);
         
         return array($match);
     }            
 
-    function render($mode, &$renderer, $data) {
+    function render($mode, Doku_Renderer $renderer, $data) {
         global $conf;
         global $ID;       
         $description = $data[0];
