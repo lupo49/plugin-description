@@ -2,7 +2,7 @@
 /**
  *  Description action plugin
  *
- *  @lastmodified 2012-07-02
+ *  @lastmodified 2016-04-17
  *  @license      GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *  @author       Ikuo Obataya <I.Obataya@gmail.com>
  *  @author       Matthias Schulte <dokuwiki@lupo49.de>
@@ -27,7 +27,7 @@ class action_plugin_description extends DokuWiki_Action_Plugin {
     /**
      * Add an abstract, global value or a specified string to meta header
      */
-    function description(&$event, $param) {
+    function description(Doku_Event $event, $param) {
         if(empty($event->data) || empty($event->data['meta'])) return;
         
         global $ID;
